@@ -12,6 +12,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class ContractRepositoryTest {
+
     @Autowired
     ContactRepository contactRepository;
 
@@ -25,6 +26,17 @@ class ContractRepositoryTest {
         assertEquals(
             List.of(contact1, contact2, contact3),
             this.contactRepository.findAll()
+        );
+    }
+
+    @Test
+    void testFindFor() {
+
+        Contact contact = this.contactRepository.save(new Contact("Charlie", "1234", "street", "Paris", "france", "N8"));
+
+        assertEquals(
+          contact,
+          this.contactRepository.findFor(contact.getId()).orElse(null)
         );
     }
 
