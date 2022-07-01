@@ -5,6 +5,5 @@ import org.springframework.web.bind.annotation.RestController;
 
 @RestController
 @CrossOrigin(origins = "${charlie.addressbook.origins:*}", allowedHeaders = "${charlie.addressbook.allowed-headers:*}")
-public class ContactRestController
-{
+public class ContactRestController {
 }
