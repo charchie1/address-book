@@ -1,5 +1,6 @@
 package com.charlie.addressbook.domain;
 
+import com.fasterxml.jackson.annotation.JsonCreator;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
 import lombok.ToString;
@@ -21,6 +22,7 @@ public class Contact {
         this(null, name, telephone, street, city, country, postCode);
     }
 
+    @JsonCreator
     public Contact(Integer id, String name, String telephone, String street, String city, String country, String postCode) {
         this.id = id;
         this.name = name;
@@ -29,6 +31,11 @@ public class Contact {
         this.city = city;
         this.country = country;
         this.postCode = postCode;
+    }
+
+    public Contact withId(Integer id)
+    {
+        return new Contact(id, this.name, this.telephone, this.street, this.city, this.country, this.postCode);
     }
 }
 

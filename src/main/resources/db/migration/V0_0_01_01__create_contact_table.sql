@@ -7,5 +7,5 @@ CREATE TABLE contact(
   street     VARCHAR2 NULL,
   city       VARCHAR2 NULL,
   country    VARCHAR2 NULL,
-  postCode   VARCHAR2 NULL
+  post_code  VARCHAR2 NULL
 );
